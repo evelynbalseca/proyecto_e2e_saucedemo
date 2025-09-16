@@ -5,10 +5,11 @@ PROYECTO E2E SAUCEDEMO - EVELYN BALSECA
 
 CONCLUSIONES
 
-1. Las pruebas automatizadas se ejecutaron de manera correcta en un tiempo de 31 segundos.
+1. Las pruebas automatizadas se ejecutaron de manera correcta en un tiempo de 34 segundos.
 2. La estructura del proyecto permite reutilizar en otros proyectos de pruebas automatizadas.
 3. Para garantizar la correcta ejecución de las pruebas automatizadas en cualquier navegador, es indispensable contar con el driver correspondiente a cada uno  e implementarlos en el proyecto, de manera que la automatización pueda ejecutarse sin inconvenientes.
 4. Es fundamental conocer los principios BDD para definir escenarios en lenguaje natural entendible para los equipos, lo que facilita la creacion de casos de pruebas en archivos .feature.
+5. El escenario "Scenario Outline" que se coloca en el feature nos permite ejecutar un mismo escenario varias veces, pero con diferentes datos.
 
 
 HALLAZGOS
