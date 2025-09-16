@@ -35,12 +35,11 @@ public class CompraOkDefinitions {
         Thread.sleep(ms);
     }
 
-
-    @When("selecciona el primer producto y seleciona el segundo producto")
-    public void selecciona_el_primer_producto_y_seleciona_el_segundo_producto() throws InterruptedException {
-        driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
+    @When("selecciona el primer producto {string} y seleciona el segundo producto {string}")
+    public void selecciona_el_primer_producto_y_seleciona_el_segundo_producto(String producto1, String producto2) throws InterruptedException {
+        driver.findElement(By.id(producto1)).click();
         Thread.sleep(ms);
-        driver.findElement(By.id("add-to-cart-sauce-labs-fleece-jacket")).click();
+        driver.findElement(By.id(producto2)).click();
         Thread.sleep(ms);
     }
 
@@ -69,7 +68,7 @@ public class CompraOkDefinitions {
     }
 
     @Then("finaliza la compra  y se muestra el mensaje {string}")
-    public void finaliza_la_compra_y_se_muestra_el_mensaje (String mensaje) {
+    public void finaliza_la_compra_y_se_muestra_el_mensaje (String mensaje) throws InterruptedException {
 
         driver.findElement(By.id("finish")).click();
         System.out.println("mensaje esperado: "+mensaje);
@@ -77,5 +76,6 @@ public class CompraOkDefinitions {
         mensajeReal = driver.findElement(By.className("complete-header")).getText();
         System.out.println("mensaje real: "+mensajeReal);
         Assert.assertEquals(mensaje,mensajeReal);
+        Thread.sleep(ms);
     }
 }
